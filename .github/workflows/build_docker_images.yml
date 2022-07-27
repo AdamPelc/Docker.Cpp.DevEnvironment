@@ -1,0 +1,16 @@
+name: Build docker image
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-dev-img:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Build docker image
+        run: docker build -t ci-test-img .
