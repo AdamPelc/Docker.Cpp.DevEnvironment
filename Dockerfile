@@ -4,6 +4,8 @@ FROM ubuntu:22.04
 # Packages installation setup
 ################################################################################
 RUN apt update
+# Package managers
+RUN apt -y install pip
 # Buld systems
 RUN apt -y install cmake
 RUN apt -y install ninja-build
