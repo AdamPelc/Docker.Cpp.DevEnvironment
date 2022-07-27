@@ -6,6 +6,7 @@ FROM ubuntu:22.04
 RUN apt update
 # Package managers
 RUN apt -y install pip
+RUN pip install conan
 # Buld systems
 RUN apt -y install cmake
 RUN apt -y install ninja-build
